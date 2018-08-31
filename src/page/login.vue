@@ -1,10 +1,11 @@
 <template>
-    <div class="login_page fillcontain">
+    <div class="login fillcontain">
+        <div class="manage_tip">
+            <p>elm后台管理系统</p>
+        </div>
         <transition name="form-fade" mode="in-out">
-            <section class="form_contianer" v-show="showLogin">
-                <div class="manage_tip">
-                    <p>elm后台管理系统</p>
-                </div>
+
+            <section class="form_container" v-show="showLogin">
                 <el-form :model="loginForm" :rules="rules" ref="loginForm">
                     <el-form-item prop="username">
                         <el-input v-model="loginForm.username" placeholder="用户名"><span>dsfsf</span></el-input>
@@ -101,5 +102,32 @@
 </script>
 
 <style lang="less" scoped>
-
+@import "../style/mixin";
+.login{
+    background-color: #324057;
+}
+.manage_tip{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.form_container{
+    .wh(320px,210px);
+    .ctp(320px, 210px);
+    border-radius: 5px;
+    padding-bottom: 10px;
+    .el-form{
+        padding: 25px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        .el-button{
+            width: 100%;
+        }
+    }
+    .tip{
+        color: red;
+        font-size: 12px;
+    }
+}
 </style>
