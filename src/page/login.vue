@@ -1,11 +1,10 @@
 <template>
     <div class="login fillcontain">
-        <div class="manage_tip">
-            <p>elm后台管理系统</p>
-        </div>
         <transition name="form-fade" mode="in-out">
-
             <section class="form_container" v-show="showLogin">
+                <div class="manage_tip">
+                    <p>elm后台管理系统</p>
+                </div>
                 <el-form :model="loginForm" :rules="rules" ref="loginForm">
                     <el-form-item prop="username">
                         <el-input v-model="loginForm.username" placeholder="用户名"><span>dsfsf</span></el-input>
@@ -105,29 +104,35 @@
 @import "../style/mixin";
 .login{
     background-color: #324057;
+    margin: 0;
+    padding: 0;
 }
-.manage_tip{
-    position: absolute;
-    color: #fff;
-    font-size: 30px;
-    margin-bottom: 40px;
-}
-.form_container{
-    .wh(320px,210px);
-    .ctp(320px, 210px);
-    border-radius: 5px;
-    padding-bottom: 10px;
-    .el-form{
-        padding: 25px;
-        padding-bottom: 0;
-        box-sizing: border-box;
-        .el-button{
-            width: 100%;
+    .manage_tip{
+        position: absolute;
+        /*border: 1px solid red;*/
+        top: -100px;
+        left: 0;
+        width: 100%;
+        p{
+            font-size: 34px;
+            color: #fff;
+            text-align: center;
         }
     }
-    .tip{
-        color: red;
-        font-size: 12px;
+
+    .form_container{
+        .wh(320px,210px);
+        .ctp(320px, 210px);
+        background-color: #fff;
+        border-radius: 14px;
+        padding: 30px 25px;
+        .submit_btn{
+            width: 100%;
+        }
+        .tip{
+            text-align: center;
+            color: red;
+            font-size: 12px;
+        }
     }
-}
 </style>

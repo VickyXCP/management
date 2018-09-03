@@ -19,7 +19,7 @@ export default new Router({
       component: manage,
       children: [
         {
-          path: '/home',
+          path: '',
           name: 'home',
           component: home
         }
